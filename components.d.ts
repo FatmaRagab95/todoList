@@ -7,13 +7,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    copy: typeof import('./src/components/createTask copy.vue')['default']
     CreateTask: typeof import('./src/components/createTask.vue')['default']
     EditTask: typeof import('./src/components/editTask.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     KanbanWidget: typeof import('./src/components/kanbanWidget.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Widget: typeof import('./src/components/widget.vue')['default']
   }
 }

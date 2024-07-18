@@ -2,6 +2,10 @@
 
 This project is a Vue 3 application using Vuetify for UI components, Vuex for state management, and other libraries to enhance functionality and development efficiency.
 
+## Demo
+
+https://todo-d6038.web.app/
+
 ## Project Setup
 
 ### Prerequisites
