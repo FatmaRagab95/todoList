@@ -34,7 +34,8 @@
 <script lang="ts" setup>
 import { defineEmits, ref } from "vue";
 import { GenericObject, useField, useForm } from "vee-validate";
-import { store } from "@/plugins/store";
+import { addTaskToStore } from "@/code/globals";
+import { iTask } from "@/code/models";
 const emit = defineEmits(["close"]);
 // Fields and validation
 const { handleSubmit } = useForm({
@@ -64,11 +65,7 @@ const items = ref(["Todo", "Inprogress", "Done"]);
 
 // create task
 const createTask = handleSubmit((values: GenericObject) => {
-  store.commit("addTask", {
-    ...values,
-    id: Math.random(),
-    status: values.status.toLowerCase(),
-  });
+  addTaskToStore(values as iTask);
   emit("close");
 });
 </script>

@@ -26,7 +26,9 @@
           </v-col>
           <v-col cols="10">
             <v-card-title class="text-body-1 pt-2 d-flex align-center">
-              <h3>{{ task.title }}</h3>
+              <h3 class="text-truncate" :title="task.title">
+                {{ task.title }}
+              </h3>
               <v-spacer></v-spacer>
               <v-menu>
                 <template v-slot:activator="{ props }">
@@ -116,6 +118,7 @@ import { iTask } from "@/code/models";
 import { store } from "@/plugins/store";
 import { defineProps, onMounted, ref } from "vue";
 import Sortable from "sortablejs";
+import { deleteTaskFromStore } from "@/code/globals";
 const props = defineProps({
   title: {
     type: String,
@@ -152,7 +155,7 @@ const openDelete = (id: number) => {
   deleteDialog.value = true;
 };
 const confirmDelete = () => {
-  store.commit("deleteTask", deletedTaskId.value);
+  deleteTaskFromStore(deletedTaskId.value);
   deleteDialog.value = false;
 };
 
