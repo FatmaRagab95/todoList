@@ -34,7 +34,6 @@
 <script lang="ts" setup>
 import { defineEmits, ref } from "vue";
 import { GenericObject, useField, useForm } from "vee-validate";
-import { store } from "@/plugins/store";
 import { iTask } from "@/code/models";
 import { editTaskInStore } from "@/code/globals";
 const props = defineProps({
